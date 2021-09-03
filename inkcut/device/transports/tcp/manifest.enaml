@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+Copyright (c) 2021, Eisenberger Tamás.
+
+Distributed under the terms of the GPL v3 License.
+
+The full license is in the file LICENSE, distributed with this software.
+
+Created on Sep 3, 2021
+
+@author: u-foka
+"""
+import enaml
+from enaml.workbench.api import Extension
+from enaml.workbench.plugin_manifest import PluginManifest
+from inkcut.device.extensions import DeviceTransport, DEVICE_TRANSPORT_POINT
+
+
+def transport_factory(driver, declaration, protocol):
+    from .plugin import TcpFdTransport, TcpFdConfig
+    config = TcpFdConfig(**driver.get_connection_config('tcp'))
+    return TcpFdTransport(declaration=declaration, protocol=protocol, config=config)
+
+
+def config_view_factory():
+    with enaml.imports():
+        from .settings import TcpFdSettingsView
+    return TcpFdSettingsView
+
+
+enamldef TcpFdManifest(PluginManifest):
+    """ Add new protocols here or within any other plugin.
+
+    """
+    id = 'inkcut.device.transport.tcp'
+    Extension:
+        id = 'transports'
+        point = DEVICE_TRANSPORT_POINT
+
+        DeviceTransport:
+            id = 'tcp'
+            name = 'TCP/IP'
+            factory = transport_factory
+            config_view = config_view_factory
