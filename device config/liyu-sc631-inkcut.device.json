@@ -1,0 +1,902 @@
+{
+  "devices": {
+    "py/object": "atom.catom.atomlist",
+    "py/seq": [
+      {
+        "py/reduce": [
+          "py/newobj",
+          {
+            "py/tuple": [
+              {
+                "py/type": "inkcut.device.plugin.Device"
+              }
+            ]
+          },
+          {
+            "name": "Liyu SC-631",
+            "manufacturer": "Liyu",
+            "model": "SC-631",
+            "custom": true,
+            "area": {
+              "py/reduce": [
+                "py/newobj",
+                {
+                  "py/tuple": [
+                    {
+                      "py/type": "inkcut.core.models.AreaBase"
+                    }
+                  ]
+                },
+                {
+                  "size": {
+                    "py/object": "atom.catom.atomclist",
+                    "py/seq": [
+                      2515.748031486,
+                      900000.0
+                    ]
+                  },
+                  "padding": {
+                    "py/object": "atom.catom.atomclist",
+                    "py/seq": [
+                      10.0,
+                      10.0,
+                      10.0,
+                      10.0
+                    ]
+                  }
+                }
+              ]
+            },
+            "declaration": {
+              "py/reduce": [
+                "py/newobj",
+                {
+                  "py/tuple": [
+                    {
+                      "py/type": "inkcut.device.extensions.DeviceDriver"
+                    }
+                  ]
+                },
+                {
+                  "name": "",
+                  "initialized": {
+                    "py/object": "atom.catom.EventBinder"
+                  },
+                  "id": "Inkcut Generic Driver",
+                  "model": "Generic Driver",
+                  "manufacturer": "Inkcut",
+                  "width": "",
+                  "length": "",
+                  "factory": {
+                    "py/function": "inkcut.device.extensions.default_device_factory"
+                  },
+                  "protocols": {
+                    "py/object": "atom.catom.atomlist",
+                    "py/seq": []
+                  },
+                  "connections": {
+                    "py/object": "atom.catom.atomlist",
+                    "py/seq": []
+                  },
+                  "config_view": {
+                    "py/function": "inkcut.device.extensions.default_device_config_view_factory"
+                  },
+                  "default_config": {
+                    "py/object": "atom.catom.atomdict"
+                  }
+                }
+              ]
+            },
+            "filters": {
+              "py/object": "atom.catom.atomlist",
+              "py/seq": [
+                {
+                  "py/reduce": [
+                    "py/newobj",
+                    {
+                      "py/tuple": [
+                        {
+                          "py/type": "inkcut.device.filters.overcut.OvercutFilter"
+                        }
+                      ]
+                    },
+                    {
+                      "declaration": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.device.extensions.DeviceFilter"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Overcut",
+                            "initialized": {
+                              "py/object": "atom.catom.EventBinder"
+                            },
+                            "id": "overcut",
+                            "factory": {
+                              "py/function": "inkcut.device.filters.manifest.overcut_factory"
+                            },
+                            "config_view": {
+                              "py/function": "inkcut.device.filters.manifest.overcut_config_view"
+                            }
+                          }
+                        ]
+                      },
+                      "config": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.device.filters.overcut.OvercutConfig"
+                              }
+                            ]
+                          },
+                          {
+                            "overcut": 3.5433070866,
+                            "overcut_units": "mm"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "py/reduce": [
+                    "py/newobj",
+                    {
+                      "py/tuple": [
+                        {
+                          "py/type": "inkcut.device.filters.blade_offset.BladeOffsetFilter"
+                        }
+                      ]
+                    },
+                    {
+                      "declaration": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.device.extensions.DeviceFilter"
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Blade Offset",
+                            "initialized": {
+                              "py/object": "atom.catom.EventBinder"
+                            },
+                            "id": "blade-offset",
+                            "factory": {
+                              "py/function": "inkcut.device.filters.manifest.blade_offset_factory"
+                            },
+                            "config_view": {
+                              "py/function": "inkcut.device.filters.manifest.blade_offset_config_view"
+                            }
+                          }
+                        ]
+                      },
+                      "config": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.device.filters.blade_offset.BladeOffsetConfig"
+                              }
+                            ]
+                          },
+                          {
+                            "offset": 1.7716535433,
+                            "offset_units": "mm",
+                            "cutoff": 5.0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "connection": {
+              "py/reduce": [
+                "py/newobj",
+                {
+                  "py/tuple": [
+                    {
+                      "py/type": "inkcut.device.transports.tcp.plugin.TcpFdTransport"
+                    }
+                  ]
+                },
+                {
+                  "declaration": {
+                    "py/reduce": [
+                      "py/newobj",
+                      {
+                        "py/tuple": [
+                          {
+                            "py/type": "inkcut.device.extensions.DeviceTransport"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "TCP/IP",
+                        "initialized": {
+                          "py/object": "atom.catom.EventBinder"
+                        },
+                        "id": "tcp",
+                        "factory": {
+                          "py/function": "inkcut.device.transports.tcp.manifest.transport_factory"
+                        },
+                        "config_view": {
+                          "py/function": "inkcut.device.transports.tcp.manifest.config_view_factory"
+                        }
+                      }
+                    ]
+                  },
+                  "config": {
+                    "py/reduce": [
+                      "py/newobj",
+                      {
+                        "py/tuple": [
+                          {
+                            "py/type": "inkcut.device.transports.tcp.plugin.TcpFdConfig"
+                          }
+                        ]
+                      },
+                      {
+                        "host": "192.168.102.104",
+                        "port": 9100
+                      }
+                    ]
+                  },
+                  "protocol": {
+                    "py/reduce": [
+                      "py/newobj",
+                      {
+                        "py/tuple": [
+                          {
+                            "py/type": "inkcut.device.protocols.hpgl.HPGLProtocol"
+                          }
+                        ]
+                      },
+                      {
+                        "declaration": {
+                          "py/reduce": [
+                            "py/newobj",
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/type": "inkcut.device.extensions.DeviceProtocol"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "HPGL",
+                              "initialized": {
+                                "py/object": "atom.catom.EventBinder"
+                              },
+                              "id": "hpgl",
+                              "factory": {
+                                "py/function": "inkcut.device.protocols.manifest.hpgl_factory"
+                              },
+                              "config_view": {
+                                "py/function": "inkcut.device.extensions.default_config_view_factory"
+                              }
+                            }
+                          ]
+                        },
+                        "config": {
+                          "py/reduce": [
+                            "py/newobj",
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/type": "inkcut.core.models.Model"
+                                }
+                              ]
+                            },
+                            {}
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "jobs": {
+              "py/object": "atom.catom.atomlist",
+              "py/seq": [
+                {
+                  "py/reduce": [
+                    "py/newobj",
+                    {
+                      "py/tuple": [
+                        {
+                          "py/type": "inkcut.job.models.Job"
+                        }
+                      ]
+                    },
+                    {
+                      "material": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.job.models.Material"
+                              }
+                            ]
+                          },
+                          {
+                            "size": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                1027.559055114,
+                                744.094488186
+                              ]
+                            },
+                            "padding": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                10.0,
+                                10.0,
+                                10.0,
+                                10.0
+                              ]
+                            },
+                            "name": "",
+                            "color": "#000000",
+                            "is_roll": false,
+                            "used": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                0.0,
+                                0.0
+                              ]
+                            },
+                            "cost": 1.0,
+                            "use_force": false,
+                            "use_speed": false,
+                            "force": 10,
+                            "speed": 10
+                          }
+                        ]
+                      },
+                      "document": "/Users/u-foka/Unclutter/star.svg",
+                      "document_kwargs": {
+                        "py/object": "atom.catom.atomdict",
+                        "ids": null
+                      },
+                      "info": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.job.models.JobInfo"
+                              }
+                            ]
+                          },
+                          {
+                            "status": "complete",
+                            "created": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxEZBAERCA=="
+                                ]
+                              ]
+                            },
+                            "started": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxEbLgzdmA=="
+                                ]
+                              ]
+                            },
+                            "ended": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxEbLw8h0g=="
+                                ]
+                              ]
+                            },
+                            "progress": 100,
+                            "data": "",
+                            "count": 1,
+                            "speed": 360.0,
+                            "length": 361.0126082084456,
+                            "duration": {
+                              "py/reduce": [
+                                {
+                                  "py/type": "datetime.timedelta"
+                                },
+                                {
+                                  "py/tuple": [
+                                    0,
+                                    1,
+                                    2813
+                                  ]
+                                }
+                              ]
+                            },
+                            "units": "in",
+                            "auto_approve": false
+                          }
+                        ]
+                      },
+                      "scale": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          1.0,
+                          1.0
+                        ]
+                      },
+                      "auto_scale": false,
+                      "lock_scale": true,
+                      "mirror": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "align_center": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "rotation": 0.0,
+                      "auto_rotate": false,
+                      "copies": 5,
+                      "auto_copies": false,
+                      "copy_spacing": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "copy_weedline": false,
+                      "copy_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0,
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "plot_weedline": false,
+                      "plot_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0,
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "order": "Normal",
+                      "feed_to_end": false,
+                      "feed_after": 0.0
+                    }
+                  ]
+                },
+                {
+                  "py/reduce": [
+                    "py/newobj",
+                    {
+                      "py/tuple": [
+                        {
+                          "py/type": "inkcut.job.models.Job"
+                        }
+                      ]
+                    },
+                    {
+                      "material": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.job.models.Material"
+                              }
+                            ]
+                          },
+                          {
+                            "size": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                1771.6535433,
+                                3543.3070866
+                              ]
+                            },
+                            "padding": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                10.0,
+                                10.0,
+                                10.0,
+                                10.0
+                              ]
+                            },
+                            "name": "",
+                            "color": "#000000",
+                            "is_roll": false,
+                            "used": {
+                              "py/object": "atom.catom.atomclist",
+                              "py/seq": [
+                                0.0,
+                                0.0
+                              ]
+                            },
+                            "cost": 1.0,
+                            "use_force": false,
+                            "use_speed": false,
+                            "force": 10,
+                            "speed": 10
+                          }
+                        ]
+                      },
+                      "document": "/Users/u-foka/Unclutter/star.svg",
+                      "document_kwargs": {
+                        "py/object": "atom.catom.atomdict",
+                        "ids": null
+                      },
+                      "info": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.job.models.JobInfo"
+                              }
+                            ]
+                          },
+                          {
+                            "status": "complete",
+                            "created": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxEZBAERCA=="
+                                ]
+                              ]
+                            },
+                            "started": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxMhHARq/A=="
+                                ]
+                              ]
+                            },
+                            "ended": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxMhJQa7UA=="
+                                ]
+                              ]
+                            },
+                            "progress": 100,
+                            "data": "",
+                            "count": 5,
+                            "speed": 360.0,
+                            "length": 3179.162928270277,
+                            "duration": {
+                              "py/reduce": [
+                                {
+                                  "py/type": "datetime.timedelta"
+                                },
+                                {
+                                  "py/tuple": [
+                                    0,
+                                    8,
+                                    831008
+                                  ]
+                                }
+                              ]
+                            },
+                            "units": "in",
+                            "auto_approve": false
+                          }
+                        ]
+                      },
+                      "scale": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          1.0,
+                          1.0
+                        ]
+                      },
+                      "auto_scale": false,
+                      "lock_scale": true,
+                      "mirror": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "align_center": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "rotation": 0.0,
+                      "auto_rotate": false,
+                      "copies": 3,
+                      "auto_copies": false,
+                      "copy_spacing": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          0.0,
+                          0.0
+                        ]
+                      },
+                      "copy_weedline": true,
+                      "copy_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          3.5433070866,
+                          3.5433070866,
+                          3.5433070866,
+                          3.5433070866
+                        ]
+                      },
+                      "plot_weedline": false,
+                      "plot_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0,
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "order": "Normal",
+                      "feed_to_end": false,
+                      "feed_after": 0.0
+                    }
+                  ]
+                },
+                {
+                  "py/reduce": [
+                    "py/newobj",
+                    {
+                      "py/tuple": [
+                        {
+                          "py/type": "inkcut.job.models.Job"
+                        }
+                      ]
+                    },
+                    {
+                      "material": {
+                        "py/id": 66
+                      },
+                      "document": "/Users/u-foka/Unclutter/Untitled-1.svg",
+                      "document_kwargs": {
+                        "py/object": "atom.catom.atomdict",
+                        "ids": null
+                      },
+                      "info": {
+                        "py/reduce": [
+                          "py/newobj",
+                          {
+                            "py/tuple": [
+                              {
+                                "py/type": "inkcut.job.models.JobInfo"
+                              }
+                            ]
+                          },
+                          {
+                            "status": "complete",
+                            "created": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxMpBQqHbA=="
+                                ]
+                              ]
+                            },
+                            "started": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxMqBArPGw=="
+                                ]
+                              ]
+                            },
+                            "ended": {
+                              "py/object": "datetime.datetime",
+                              "__reduce__": [
+                                {
+                                  "py/type": "datetime.datetime"
+                                },
+                                [
+                                  "B+YDFxMqIgk0YA=="
+                                ]
+                              ]
+                            },
+                            "progress": 100,
+                            "data": "",
+                            "count": 1,
+                            "speed": 360.0,
+                            "length": 10001.704563893234,
+                            "duration": {
+                              "py/reduce": [
+                                {
+                                  "py/type": "datetime.timedelta"
+                                },
+                                {
+                                  "py/tuple": [
+                                    0,
+                                    27,
+                                    782513
+                                  ]
+                                }
+                              ]
+                            },
+                            "units": "in",
+                            "auto_approve": false
+                          }
+                        ]
+                      },
+                      "scale": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          1.0,
+                          1.0
+                        ]
+                      },
+                      "auto_scale": false,
+                      "lock_scale": true,
+                      "mirror": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "align_center": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          false,
+                          false
+                        ]
+                      },
+                      "rotation": 0.0,
+                      "auto_rotate": false,
+                      "copies": 1,
+                      "auto_copies": false,
+                      "copy_spacing": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "copy_weedline": false,
+                      "copy_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0,
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "plot_weedline": false,
+                      "plot_weedline_padding": {
+                        "py/object": "atom.catom.atomclist",
+                        "py/seq": [
+                          10.0,
+                          10.0,
+                          10.0,
+                          10.0
+                        ]
+                      },
+                      "order": "Normal",
+                      "feed_to_end": false,
+                      "feed_after": 0.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "queue": {
+              "py/object": "atom.catom.atomlist",
+              "py/seq": []
+            },
+            "config": {
+              "py/reduce": [
+                "py/newobj",
+                {
+                  "py/tuple": [
+                    {
+                      "py/type": "inkcut.device.plugin.DeviceConfig"
+                    }
+                  ]
+                },
+                {
+                  "step_time": 35.0,
+                  "custom_rate": -1.0,
+                  "step_size": 3.5433070866,
+                  "interpolate": false,
+                  "sample_rate": 100,
+                  "rotation": 0,
+                  "swap_xy": true,
+                  "mirror_y": false,
+                  "mirror_x": false,
+                  "scale": {
+                    "py/object": "atom.catom.atomclist",
+                    "py/seq": [
+                      1.0,
+                      1.0
+                    ]
+                  },
+                  "quality_factor": 1.0,
+                  "speed": 4.0,
+                  "speed_units": "in/s",
+                  "speed_enabled": false,
+                  "force": 40.0,
+                  "force_units": "g",
+                  "force_enabled": false,
+                  "absolute": false,
+                  "spooled": false,
+                  "test_mode": false,
+                  "commands_before": "IN;",
+                  "commands_after": "PU;!PG;",
+                  "commands_connect": "",
+                  "commands_disconnect": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "device": {
+    "py/id": 2
+  }
+}

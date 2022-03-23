@@ -12,3 +12,4 @@ inkcut-*.tar.gz
 /.coverage
 /release
 .directory
+*.app
