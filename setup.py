@@ -47,7 +47,6 @@ with open('inkcut/__init__.py') as f:
     assert m is not None, 'Failed to read version'
     version = m.group(1)
 
-
 setup(
     name='inkcut',
     packages=find_packages(),
@@ -69,5 +68,13 @@ setup(
     #    # IPython console plugin
     #    'console':  ["qtconsole"],
     #}
-
+    app=['main.py'],
+    data_files=[],
+    options={
+        'py2app': {
+            'iconfile': 'inkcut/res/inkcut.icns',
+            'packages': 'enaml'
+        }
+    },
+    setup_requires=['py2app'],
 )
