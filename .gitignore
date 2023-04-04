@@ -13,3 +13,4 @@ inkcut-*.tar.gz
 /release
 .directory
 *.app
+.eggs

@@ -72,8 +72,9 @@ setup(
     data_files=[],
     options={
         'py2app': {
+            'alias': True,
             'iconfile': 'inkcut/res/inkcut.icns',
-            'packages': 'enaml'
+            'packages': 'enaml, qreactor'
         }
     },
     setup_requires=['py2app'],
